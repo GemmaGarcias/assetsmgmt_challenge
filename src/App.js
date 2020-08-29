@@ -1,12 +1,7 @@
 import React from 'react';
 import { Link, Route } from "react-router-dom";
+import AssetsPage from './components/AssetsPage/AssetsPage';
 import './App.css';
-
-const Assets = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
 
 const Entities = () => (
   <div>
@@ -16,7 +11,7 @@ const Entities = () => (
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <nav className="navbar navbar-light">
         <ul className="nav navbar-nav">
           <li>
@@ -27,7 +22,7 @@ function App() {
           </li>
         </ul>
       </nav>
-      <Route exact path="/" component={Assets} />
+      <Route exact path="/" component={AssetsPage} />
       <Route path="/entities" component={Entities} />
   </div>
   );
