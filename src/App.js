@@ -15,7 +15,7 @@ function App() {
       <nav className="navbar navbar-light">
         <ul className="nav navbar-nav">
           <li>
-            <Link to="/">Assets</Link>
+            <Link to="/assets">Assets</Link>
           </li>
           <li>
             <Link to="/entities">Entities</Link>
@@ -23,7 +23,7 @@ function App() {
         </ul>
       </nav>
       <Switch>
-        <Redirect from="/" to="/assets"/>
+        <Redirect exact from="/" to="/assets"/>
         <Route exact path="/assets" component={AssetsPage} />
         <Route path="/entities" component={Entities} />
       </Switch>
