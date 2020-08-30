@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch, Redirect } from "react-router-dom";
 import AssetsPage from './components/AssetsPage/AssetsPage';
 import './App.css';
 
@@ -22,8 +22,11 @@ function App() {
           </li>
         </ul>
       </nav>
-      <Route exact path="/" component={AssetsPage} />
-      <Route path="/entities" component={Entities} />
+      <Switch>
+        <Redirect from="/" to="/assets"/>
+        <Route exact path="/assets" component={AssetsPage} />
+        <Route path="/entities" component={Entities} />
+      </Switch>
   </div>
   );
 }
