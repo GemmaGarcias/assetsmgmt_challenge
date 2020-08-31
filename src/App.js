@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, Route, Switch, Redirect } from "react-router-dom";
-import AssetsPage from './components/AssetsPage/AssetsPage';
+import { Link, Route, Switch, Redirect } from 'react-router-dom';
+import AssetsPage from './components/views/AssetsPage/AssetsPage';
 import './App.css';
 
 const Entities = () => (

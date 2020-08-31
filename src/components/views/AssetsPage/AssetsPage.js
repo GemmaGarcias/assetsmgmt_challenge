@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getAssets } from "../../services/assets";
+import { getAssets } from "../../../services/assets";
+import CustomTable from '../../common/CustomTable';
 
 function AssetsPage() {
   const [assets, setAssets] = useState([]);
@@ -17,8 +18,9 @@ function AssetsPage() {
     <div>
         <h2>Assets</h2>
         {errorState.hasErrors && <div>{errorState.message}</div>}
+        <CustomTable/>
         <section>
-          {assets && assets.map((item) => (
+          {assets.map((item) => (
             <article key={item.id}>{item.t_street_name}</article>
           ))}
         </section>
