@@ -1,7 +1,7 @@
 import React from 'react';
 import './CustomTable.css';
 
-function CustomTable({headers, data}) {
+function CustomTable({headers, data, addColumn}) {
   
   return (
     <table id="customTable">
@@ -11,6 +11,7 @@ function CustomTable({headers, data}) {
             {headers.map((name, index) => (
               <th key={index}>{name}</th>
             ))}
+            {addColumn && <th>{addColumn.header}</th>}
           </>
         </tr>
       </thead>
@@ -22,6 +23,7 @@ function CustomTable({headers, data}) {
                 {headers.map((property, index) => (
                   <td key={index}>{row[property]}</td>
                 ))}
+                {addColumn && <td>{addColumn.content}</td>}
               </>
             </tr>
           ))}
