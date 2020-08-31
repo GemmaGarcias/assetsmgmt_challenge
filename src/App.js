@@ -7,25 +7,27 @@ const EntitiesPage = lazy(() => import('./components/views/EntitiesPage/Entities
 function App() {
   const renderLoader = () => <p>Loading</p>;
   return (
-    <Suspense fallback={renderLoader()}>
-      <div className="App">
-        <nav className="navbar navbar-light">
-          <ul className="nav navbar-nav">
-            <li>
-              <Link to="/assets">Assets</Link>
-            </li>
-            <li>
-              <Link to="/entities">Entities</Link>
-            </li>
-          </ul>
-        </nav>
-        <Switch>
-          <Redirect exact from="/" to="/assets"/>
-          <Route exact path="/assets" component={AssetsPage} />
-          <Route path="/entities" component={EntitiesPage} />
-        </Switch>
+    <div className="App">
+      <nav className="navbar">
+        <ul className="nav">
+          <li className="navItem">
+            <Link to="/assets">Assets</Link>
+          </li>
+          <li className="navItem">
+            <Link to="/entities">Entities</Link>
+          </li>
+        </ul>
+      </nav>
+      <Suspense fallback={renderLoader()}>
+        <div className="container">
+          <Switch>
+            <Redirect exact from="/" to="/assets"/>
+            <Route exact path="/assets" component={AssetsPage} />
+            <Route path="/entities" component={EntitiesPage} />
+          </Switch>
+        </div>
+      </Suspense>
     </div>
-  </Suspense>
   );
 }
 
