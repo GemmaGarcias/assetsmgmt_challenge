@@ -1,15 +1,13 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { Link } from 'react-router-dom';
-import { getAssets } from "../../../services/services";
+import { getEntities } from "../../../services/services";
 const CustomTable = lazy(() => import('../../common/CustomTable'));
 
-
-function AssetsPage() {
-  const [assets, setAssets] = useState([]);
+function EntitiesPage() {
+  const [entities, setEntities] = useState([]);
   const [errorState, setErrorState] = useState({ hasErrors: false });
 
   useEffect(() => {
-    getAssets().then(setAssets).catch(handleError);
+    getEntities().then(setEntities).catch(handleError);
   }, []);
 
   function handleError(err) {
@@ -19,22 +17,19 @@ function AssetsPage() {
   function getObjectKeys(obj) {
     return Object.keys(obj);
   }
-
-  const goToEntitiesComponent = () => <button><Link to="/entities">Go to Entities</Link></button>;
   const renderLoader = () => <p>Loading</p>;
 
   return (
     <Suspense fallback={renderLoader()}>
       <>
-        <h2>Assets</h2>
+        <h2>Entities</h2>
         {errorState.hasErrors && <div>{errorState.message}</div>}
         <CustomTable 
-          headers={getObjectKeys(assets.length && assets[0])}
-          data={assets} 
-          addColumn={{header: "Go to", content: goToEntitiesComponent()}}/>
-      </>    
+          headers={getObjectKeys(entities.length && entities[0])}
+          data={entities}/>
+      </>
     </Suspense>
   );
 }
 
-export default AssetsPage;
+export default EntitiesPage;
