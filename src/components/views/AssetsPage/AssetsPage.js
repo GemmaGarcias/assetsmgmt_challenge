@@ -19,11 +19,11 @@ function AssetsPage() {
   }
 
   return (
-    <div>
+    <>
         <h2>Assets</h2>
         {errorState.hasErrors && <div>{errorState.message}</div>}
         <CustomTable headers={getObjectKeys(assets.length && assets[0])} data={assets}/>
-    </div>
+    </>
   );
 }
 

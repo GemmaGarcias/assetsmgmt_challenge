@@ -3,10 +3,8 @@ import './CustomTable.css';
 
 function CustomTable({headers, data}) {
   
-
-
   return (
-    <table data-test-id="customTable">
+    <table id="customTable">
       <thead>
         <tr>
           <>
@@ -17,13 +15,17 @@ function CustomTable({headers, data}) {
         </tr>
       </thead>
       <tbody>
-        {data.map((row) => (
-          <tr key={row.id}>
-            {headers.map((head, index) => (
-              <td key={index}>{row[head]}</td>
-            ))}
-          </tr>
-        ))}
+        <>
+          {data.map((row) => (
+            <tr key={row.id}>
+              <>
+                {headers.map((property, index) => (
+                  <td key={index}>{row[property]}</td>
+                ))}
+              </>
+            </tr>
+          ))}
+        </>  
       </tbody>
     </table>
   );
