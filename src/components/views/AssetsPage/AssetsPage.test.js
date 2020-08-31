@@ -1,4 +1,3 @@
-// app.test.jsx
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import AssetsPage from "./AssetsPage";

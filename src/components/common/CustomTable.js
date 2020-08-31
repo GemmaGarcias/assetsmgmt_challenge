@@ -1,15 +1,30 @@
 import React from 'react';
 import './CustomTable.css';
 
-function CustomTable() {
+function CustomTable({headers, data}) {
+  
+
+
   return (
-    <table>
-      <tr>
+    <table data-test-id="customTable">
+      <thead>
+        <tr>
           <>
-          <td>Hello</td>
-          <td>World</td>
+            {headers.map((name, index) => (
+              <th key={index}>{name}</th>
+            ))}
           </>
-      </tr>
+        </tr>
+      </thead>
+      <tbody>
+        {data.map((row) => (
+          <tr key={row.id}>
+            {headers.map((head, index) => (
+              <td key={index}>{row[head]}</td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 }

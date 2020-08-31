@@ -14,16 +14,15 @@ function AssetsPage() {
     setErrorState({ hasErrors: true, message: err.message });
   }
 
+  function getObjectKeys(obj) {
+    return Object.keys(obj);
+  }
+
   return (
     <div>
         <h2>Assets</h2>
         {errorState.hasErrors && <div>{errorState.message}</div>}
-        <CustomTable/>
-        <section>
-          {assets.map((item) => (
-            <article key={item.id}>{item.t_street_name}</article>
-          ))}
-        </section>
+        <CustomTable headers={getObjectKeys(assets.length && assets[0])} data={assets}/>
     </div>
   );
 }
