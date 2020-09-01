@@ -1,7 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { getAssets } from "../../../services/services";
-const CustomTable = lazy(() => import('../../common/CustomTable'));
+const CustomTable = lazy(() => import('../../common/CustomTable/CustomTable'));
 
 
 function AssetsPage() {

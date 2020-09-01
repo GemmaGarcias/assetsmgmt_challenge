@@ -1,6 +1,8 @@
 import React, { lazy, Suspense } from 'react';
-import { Link, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
+import Navbar from './components/common/Navbar/Navbar';
+
 const AssetsPage = lazy(() => import('./components/views/AssetsPage/AssetsPage'));
 const EntitiesPage = lazy(() => import('./components/views/EntitiesPage/EntitiesPage'));
 
@@ -8,16 +10,7 @@ function App() {
   const renderLoader = () => <p>Loading</p>;
   return (
     <div className="App">
-      <nav className="navbar">
-        <ul className="nav">
-          <li className="navItem">
-            <Link to="/assets">Assets</Link>
-          </li>
-          <li className="navItem">
-            <Link to="/entities">Entities</Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
       <Suspense fallback={renderLoader()}>
         <div className="container">
           <Switch>

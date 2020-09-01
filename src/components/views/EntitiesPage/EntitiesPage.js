@@ -1,6 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { getEntities } from "../../../services/services";
-const CustomTable = lazy(() => import('../../common/CustomTable'));
+const CustomTable = lazy(() => import('../../common/CustomTable/CustomTable'));
 
 function EntitiesPage() {
   const [entities, setEntities] = useState([]);
@@ -24,6 +24,7 @@ function EntitiesPage() {
       <>
         <h2>Entities</h2>
         {errorState.hasErrors && <div>{errorState.message}</div>}
+        {entities.length === 0 && renderLoader()}
         <CustomTable 
           headers={getObjectKeys(entities.length && entities[0])}
           data={entities}/>
