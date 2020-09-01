@@ -1,3 +1,7 @@
+.parentTable {
+  position: relative;
+}
+
 table {
   border-collapse: collapse;
   letter-spacing: 1px;
@@ -49,6 +53,10 @@ tr:nth-child(odd) td {
 .table-button a:hover{
   text-decoration: none;
   color: white;
+}
+
+.popup-menu {
+  position: absolute;
 }
 
 @media only screen and (max-width: 600px) {

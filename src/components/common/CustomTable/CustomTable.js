@@ -8,35 +8,42 @@ function CustomTable({headers, data, addColumn}) {
   function onSubmit(newRow) {
     setDatatable([newRow, ...dataTable]);
   }
+
+  function contextMenu(e, row){
+    e.preventDefault();
+    alert(`Test: ${row}`)
+  }
   
   return (
-    <table id="customTable">
-      <thead>
-        <tr>
+    <div className="parentTable">
+      <table id="customTable">
+        <thead>
+          <tr>
+            <>
+              {headers.map((name, index) => (
+                <th key={index}>{name}</th>
+              ))}
+              {addColumn && <th>{addColumn.header}</th>}
+            </>
+          </tr>
+        </thead>
+        <tbody>
           <>
-            {headers.map((name, index) => (
-              <th key={index}>{name}</th>
+            <NewRow headers={headers} data={dataTable} onSubmit={onSubmit}/>
+            {dataTable.map((row) => (
+              <tr key={row.id} onContextMenu={e => contextMenu(e, row.id)}>
+                <>
+                  {headers.map((property, index) => (
+                    <td key={index}>{row[property]}</td>
+                  ))}
+                  {addColumn && <td>{addColumn.content}</td>}
+                </>
+              </tr>
             ))}
-            {addColumn && <th>{addColumn.header}</th>}
-          </>
-        </tr>
-      </thead>
-      <tbody>
-        <>
-          <NewRow headers={headers} data={dataTable} onSubmit={onSubmit}/>
-          {dataTable.map((row) => (
-            <tr key={row.id}>
-              <>
-                {headers.map((property, index) => (
-                  <td key={index}>{row[property]}</td>
-                ))}
-                {addColumn && <td>{addColumn.content}</td>}
-              </>
-            </tr>
-          ))}
-        </>  
-      </tbody>
-    </table>
+          </>  
+        </tbody>
+      </table>
+    </div>
   );
 }
 

@@ -26,4 +26,3 @@ describe("Assets page", () => {
         expect(await screen.findByText("There was a network error. Please try again in a few seconds.")).toBeInTheDocument();
     });
 });
-
