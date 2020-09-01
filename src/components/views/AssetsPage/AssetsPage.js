@@ -1,6 +1,8 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { getAssets } from "../../../services/services";
+import { getObjectKeys } from '../../../utils/utils';
+import RenderLoader from '../../common/RenderLoader/RenderLoader';
 const CustomTable = lazy(() => import('../../common/CustomTable/CustomTable'));
 
 
@@ -16,24 +18,19 @@ function AssetsPage() {
     setErrorState({ hasErrors: true, message: err.message });
   }
 
-  function getObjectKeys(obj) {
-    return Object.keys(obj);
-  }
-
   const goToEntitiesComponent = () => <button><Link to="/entities">Go to Entities</Link></button>;
-  const renderLoader = () => <p>Loading</p>;
 
   return (
-    <Suspense fallback={renderLoader()}>
       <>
         <h2>Assets</h2>
-        {errorState.hasErrors && <div>{errorState.message}</div>}
-        {assets && <CustomTable 
-          headers={getObjectKeys(assets.length && assets[0])}
-          data={assets} 
-          addColumn={{header: "Go to", content: goToEntitiesComponent()}}/>}
-      </>    
-    </Suspense>
+        {errorState.hasErrors && <div>{errorState.message}</div>}    
+        <Suspense fallback={<RenderLoader text="Loading..."/>}>
+          {assets && <CustomTable 
+              headers={getObjectKeys(assets.length && assets[0])}
+              data={assets} 
+              addColumn={{header: "Go to", content: goToEntitiesComponent()}}/>}
+        </Suspense>
+      </>
   );
 }
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { getEntities } from "../../../services/services";
+import RenderLoader from '../../common/RenderLoader/RenderLoader';
 const CustomTable = lazy(() => import('../../common/CustomTable/CustomTable'));
 
 function EntitiesPage() {
@@ -17,14 +18,12 @@ function EntitiesPage() {
   function getObjectKeys(obj) {
     return Object.keys(obj);
   }
-  const renderLoader = () => <p>Wait I'm loading data for you</p>;
 
   return (
     <>    
-      <Suspense fallback={renderLoader()}>
-        <h2>Entities</h2>
-        {errorState.hasErrors && <div>{errorState.message}</div>}
-        {!entities && renderLoader()}
+      <h2>Entities</h2>
+      {errorState.hasErrors && <div>{errorState.message}</div>}
+      <Suspense fallback={<RenderLoader text={"Wait I'm loading entities for you"}/>}>
         {entities && <CustomTable 
           headers={getObjectKeys(entities.length && entities[0])}
           data={entities}/>}    
