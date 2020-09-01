@@ -3,7 +3,7 @@ import { getEntities } from "../../../services/services";
 const CustomTable = lazy(() => import('../../common/CustomTable/CustomTable'));
 
 function EntitiesPage() {
-  const [entities, setEntities] = useState([]);
+  const [entities, setEntities] = useState();
   const [errorState, setErrorState] = useState({ hasErrors: false });
 
   useEffect(() => {
@@ -17,19 +17,19 @@ function EntitiesPage() {
   function getObjectKeys(obj) {
     return Object.keys(obj);
   }
-  const renderLoader = () => <p>Loading</p>;
+  const renderLoader = () => <p>Wait I'm loading data for you</p>;
 
   return (
-    <Suspense fallback={renderLoader()}>
-      <>
+    <>    
+      <Suspense fallback={renderLoader()}>
         <h2>Entities</h2>
         {errorState.hasErrors && <div>{errorState.message}</div>}
-        {entities.length === 0 && renderLoader()}
-        <CustomTable 
+        {!entities && renderLoader()}
+        {entities && <CustomTable 
           headers={getObjectKeys(entities.length && entities[0])}
-          data={entities}/>
-      </>
-    </Suspense>
+          data={entities}/>}    
+      </Suspense>
+    </>
   );
 }
 

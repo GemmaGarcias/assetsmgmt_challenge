@@ -5,7 +5,7 @@ const CustomTable = lazy(() => import('../../common/CustomTable/CustomTable'));
 
 
 function AssetsPage() {
-  const [assets, setAssets] = useState([]);
+  const [assets, setAssets] = useState();
   const [errorState, setErrorState] = useState({ hasErrors: false });
 
   useEffect(() => {
@@ -28,10 +28,10 @@ function AssetsPage() {
       <>
         <h2>Assets</h2>
         {errorState.hasErrors && <div>{errorState.message}</div>}
-        <CustomTable 
+        {assets && <CustomTable 
           headers={getObjectKeys(assets.length && assets[0])}
           data={assets} 
-          addColumn={{header: "Go to", content: goToEntitiesComponent()}}/>
+          addColumn={{header: "Go to", content: goToEntitiesComponent()}}/>}
       </>    
     </Suspense>
   );

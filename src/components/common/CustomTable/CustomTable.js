@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import NewRow from './NewRow';
 import './CustomTable.css';
 
 function CustomTable({headers, data, addColumn}) {
+  const [dataTable, setDatatable] = useState([...data]);
+
+  function onSubmit(newRow) {
+    setDatatable([newRow, ...dataTable]);
+  }
   
   return (
     <table id="customTable">
@@ -17,7 +23,8 @@ function CustomTable({headers, data, addColumn}) {
       </thead>
       <tbody>
         <>
-          {data.map((row) => (
+          <NewRow headers={headers} data={dataTable} onSubmit={onSubmit}/>
+          {dataTable.map((row) => (
             <tr key={row.id}>
               <>
                 {headers.map((property, index) => (
