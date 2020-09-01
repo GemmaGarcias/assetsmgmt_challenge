@@ -22,9 +22,9 @@ function AssetsPage() {
 
   return (
       <>
-        <h2>Assets</h2>
-        {errorState.hasErrors && <div>{errorState.message}</div>}    
-        <Suspense fallback={<RenderLoader text="Loading..."/>}>
+        <h2>Assets</h2>  
+        <Suspense fallback={<RenderLoader text="Loading..."/>}>  
+          {errorState.hasErrors && <div>{errorState.message}</div>}  
           {assets && <CustomTable 
               headers={getObjectKeys(assets.length && assets[0])}
               data={assets} 

@@ -22,8 +22,8 @@ function EntitiesPage() {
   return (
     <>    
       <h2>Entities</h2>
-      {errorState.hasErrors && <div>{errorState.message}</div>}
       <Suspense fallback={<RenderLoader text={"Wait I'm loading entities for you"}/>}>
+        {errorState.hasErrors && <div>{errorState.message}</div>}
         {entities && <CustomTable 
           headers={getObjectKeys(entities.length && entities[0])}
           data={entities}/>}    
