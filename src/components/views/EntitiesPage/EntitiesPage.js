@@ -1,7 +1,7 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getEntities } from "../../../services/services";
 import RenderLoader from '../../common/RenderLoader/RenderLoader';
-const CustomTable = lazy(() => import('../../common/CustomTable/CustomTable'));
+import CustomTable from '../../common/CustomTable/CustomTable';
 
 function EntitiesPage() {
   const [entities, setEntities] = useState();
@@ -22,12 +22,14 @@ function EntitiesPage() {
   return (
     <>    
       <h2>Entities</h2>
-      <Suspense fallback={<RenderLoader text={"Wait I'm loading entities for you"}/>}>
         {errorState.hasErrors && <div>{errorState.message}</div>}
-        {entities && <CustomTable 
-          headers={getObjectKeys(entities.length && entities[0])}
-          data={entities}/>}    
-      </Suspense>
+        {entities ? 
+          <CustomTable 
+            headers={getObjectKeys(entities.length && entities[0])}
+            data={entities}/>
+          : 
+          <RenderLoader text={"Wait I'm loading entities for you"}/>
+        }    
     </>
   );
 }

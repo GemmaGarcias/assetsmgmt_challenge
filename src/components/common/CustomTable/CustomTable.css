@@ -27,6 +27,30 @@ tr:nth-child(odd) td {
   background-color: rgb(245,245,245);
 }
 
+.table-button {
+  cursor: pointer;
+  border: none;
+  color: green;
+  background-color: inherit;
+}
+
+.table-button:hover {
+  color: white;
+  background-color: green;
+}
+
+.table-button a{
+  padding: 5px;
+  display: inline-block;
+  text-decoration: none;
+  color: green;
+}
+
+.table-button a:hover{
+  text-decoration: none;
+  color: white;
+}
+
 @media only screen and (max-width: 600px) {
   table {
       width:100%;

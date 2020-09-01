@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { getAssets } from "../../../services/services";
 import { getObjectKeys } from '../../../utils/utils';
 import RenderLoader from '../../common/RenderLoader/RenderLoader';
-const CustomTable = lazy(() => import('../../common/CustomTable/CustomTable'));
+import CustomTable from '../../common/CustomTable/CustomTable';
 
 
 function AssetsPage() {
@@ -18,18 +18,20 @@ function AssetsPage() {
     setErrorState({ hasErrors: true, message: err.message });
   }
 
-  const goToEntitiesComponent = () => <button><Link to="/entities">Go to Entities</Link></button>;
+  const goToEntitiesComponent = () => <button className="table-button"><Link to="/entities">Go to Entities</Link></button>;
 
   return (
       <>
         <h2>Assets</h2>  
-        <Suspense fallback={<RenderLoader text="Loading..."/>}>  
-          {errorState.hasErrors && <div>{errorState.message}</div>}  
-          {assets && <CustomTable 
-              headers={getObjectKeys(assets.length && assets[0])}
-              data={assets} 
-              addColumn={{header: "Go to", content: goToEntitiesComponent()}}/>}
-        </Suspense>
+        {errorState.hasErrors && <div>{errorState.message}</div>}  
+        {assets ? 
+          <CustomTable 
+            headers={getObjectKeys(assets.length && assets[0])}
+            data={assets} 
+            addColumn={{header: "Go to", content: goToEntitiesComponent()}}/>
+          :
+          <RenderLoader text="Wait I'm loading assets for you"/>
+        }
       </>
   );
 }
