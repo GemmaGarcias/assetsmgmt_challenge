@@ -5,7 +5,7 @@ import { getObjectKeys } from '../../../utils/utils';
 import RenderLoader from '../../common/RenderLoader/RenderLoader';
 import CustomTable from '../../common/CustomTable/CustomTable';
 
-const publicURL = process.env.REACT_APP_PUBLIC_URL;
+const publicURL = process.env.PUBLIC_URL;
 
 function AssetsPage() {
   const [assets, setAssets] = useState();
@@ -19,7 +19,7 @@ function AssetsPage() {
     setErrorState({ hasErrors: true, message: err.message });
   }
 
-  const goToEntitiesComponent = () => <button className="table-button"><Link to={`${publicURL}entities`}>Go to Entities</Link></button>;
+  const goToEntitiesComponent = () => <button className="table-button"><Link to={`${publicURL}/entities`}>Go to Entities</Link></button>;
 
   return (
       <>

@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { MenuData } from './MenuData';
 import './Navbar.css';
 
-const publicURL = process.env.REACT_APP_PUBLIC_URL;
+const publicURL = process.env.PUBLIC_URL;
 
 function Navbar() {
   let location = useLocation();
