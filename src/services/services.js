@@ -1,8 +1,11 @@
 import { NetworkError, ServerError, NotFoundError } from './errors';
 
+const baseURL = process.env.REACT_APP_API;
+
 export async function getAssets() {
+  console.log(baseURL)
     try {
-        const response = await fetch("https://6y458uslg3.execute-api.eu-west-3.amazonaws.com/elixos/assets");
+        const response = await fetch(`${baseURL}/assets`);
         if (!response.ok) {
             return handleError(response.status);
         }
@@ -18,7 +21,7 @@ export async function getAssets() {
 
 export async function getEntities() {
   try {
-      const response = await fetch("https://6y458uslg3.execute-api.eu-west-3.amazonaws.com/elixos/entities");
+      const response = await fetch(`${baseURL}/entities`);
       if (!response.ok) {
           return handleError(response.status);
       }
