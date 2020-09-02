@@ -22,8 +22,9 @@ function EntitiesPage() {
   return (
     <>    
       <h2>Entities</h2>
-        {errorState.hasErrors && <div>{errorState.message}</div>}
-        {entities ? 
+        {errorState.hasErrors ?
+         <div>{errorState.message}</div>
+         : entities ? 
           <CustomTable 
             headers={getObjectKeys(entities.length && entities[0])}
             data={entities}/>
