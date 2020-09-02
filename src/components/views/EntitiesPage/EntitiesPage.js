@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getEntities } from "../../../services/services";
+import { getObjectKeys } from '../../../utils/utils';
 import RenderLoader from '../../common/RenderLoader/RenderLoader';
 import CustomTable from '../../common/CustomTable/CustomTable';
 
@@ -13,10 +14,6 @@ function EntitiesPage() {
 
   function handleError(err) {
     setErrorState({ hasErrors: true, message: err.message });
-  }
-
-  function getObjectKeys(obj) {
-    return Object.keys(obj);
   }
 
   return (
