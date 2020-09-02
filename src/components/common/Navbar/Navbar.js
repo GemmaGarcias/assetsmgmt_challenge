@@ -3,13 +3,15 @@ import { Link, useLocation } from 'react-router-dom';
 import { MenuData } from './MenuData';
 import './Navbar.css';
 
+const publicURL = process.env.REACT_APP_PUBLIC_URL;
+
 function Navbar() {
   let location = useLocation();
   const [menu, setMenu] = useState([...MenuData]);
 
   function updateActiveMenu(path) {
     return menu.map((item, i) => {
-      if(item.path === path){ item.active = true; } else { item.active = false; }
+      if(`${publicURL}${item.path}` === `${publicURL}${path}`){ item.active = true; } else { item.active = false; }
       return item;})
   }
 
@@ -22,7 +24,7 @@ function Navbar() {
       <ul className="nav-menu-items">
         {menu.map((item, i) => (
           <li key={i} className={item.cName}>
-            <Link className={item.active ? "active" : null} to={item.path}>{item.title}</Link>
+            <Link className={item.active ? "active" : null} to={`${publicURL}${item.path}`}>{item.title}</Link>
           </li>
         ))}
       </ul>
