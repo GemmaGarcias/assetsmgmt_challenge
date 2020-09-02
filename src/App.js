@@ -6,6 +6,8 @@ import Navbar from './components/common/Navbar/Navbar';
 const AssetsPage = lazy(() => import('./components/views/AssetsPage/AssetsPage'));
 const EntitiesPage = lazy(() => import('./components/views/EntitiesPage/EntitiesPage'));
 
+const publicURL = process.env.REACT_APP_PUBLIC_URL;
+
 function App() {
   const renderLoader = () => <p>Loading</p>;
   return (
@@ -14,9 +16,9 @@ function App() {
       <Suspense fallback={renderLoader()}>
         <div className="container">
           <Switch>
-            <Redirect exact from="/" to="/assets"/>
-            <Route exact path="/assets" component={AssetsPage} />
-            <Route path="/entities" component={EntitiesPage} />
+            <Redirect exact from={`${publicURL}`} to={`${publicURL}assets`}/>
+            <Route exact path={`${publicURL}assets`} component={AssetsPage} />
+            <Route path={`${publicURL}entities`} component={EntitiesPage} />
           </Switch>
         </div>
       </Suspense>
