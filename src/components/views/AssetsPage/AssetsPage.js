@@ -24,15 +24,17 @@ function AssetsPage() {
   return (
       <>
         <h2>Assets</h2>  
-        {errorState.hasErrors && <div>{errorState.message}</div>}  
-        {assets ? 
-          <CustomTable 
-            headers={getObjectKeys(assets.length && assets[0])}
-            data={assets} 
-            addColumn={{header: "Go to", content: goToEntitiesComponent()}}/>
+        {errorState.hasErrors ? 
+          <div>{errorState.message}</div>
           :
-          <RenderLoader text="Wait I'm loading assets for you"/>
-        }
+          assets ? 
+            <CustomTable 
+              headers={getObjectKeys(assets.length && assets[0])}
+              data={assets} 
+              addColumn={{header: "Go to", content: goToEntitiesComponent()}}/>
+            :
+            <RenderLoader text="Wait I'm loading assets for you"/>
+          } 
       </>
   );
 }

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import NewRow from './NewRow';
 import './CustomTable.css';
 
-function CustomTable({headers, data, addColumn}) {
+function CustomTable({headers, data, addColumn, contextmenu}) {
   const [dataTable, setDatatable] = useState([...data]);
 
   function onSubmit(newRow) {
@@ -10,8 +10,10 @@ function CustomTable({headers, data, addColumn}) {
   }
 
   function contextMenu(e, row){
-    e.preventDefault();
-    alert(`Test: ${row}`)
+    if(contextmenu){
+      e.preventDefault();
+      alert(`Test: ${row}`)
+    }
   }
   
   return (
