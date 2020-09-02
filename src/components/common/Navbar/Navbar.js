@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { MenuData } from './MenuData';
 import './Navbar.css';
 
-const publicURL = process.env.REACT_APP_PUBLIC_URL;
+const publicURL = process.env.PUBLIC_URL;
 
 function Navbar() {
   let location = useLocation();
@@ -11,7 +11,7 @@ function Navbar() {
 
   function updateActiveMenu(path) {
     return menu.map((item, i) => {
-      if(`${publicURL}${item.path}` === `${publicURL}${path}`){ item.active = true; } else { item.active = false; }
+      if(`${publicURL}${item.path}` === path){ item.active = true; } else { item.active = false; }
       return item;})
   }
 
