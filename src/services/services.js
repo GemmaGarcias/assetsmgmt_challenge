@@ -5,7 +5,9 @@ const baseURL = process.env.REACT_APP_API;
 export async function getAssets() {
   console.log(baseURL)
     try {
-        const response = await fetch(`${baseURL}/assets`);
+        const response = await fetch(`/assets`, {
+          mode: 'no-cors'
+        });
         if (!response.ok) {
             return handleError(response.status);
         }
@@ -21,7 +23,7 @@ export async function getAssets() {
 
 export async function getEntities() {
   try {
-      const response = await fetch(`${baseURL}/entities`);
+      const response = await fetch(`/entities`);
       if (!response.ok) {
           return handleError(response.status);
       }
