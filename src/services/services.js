@@ -3,11 +3,8 @@ import { NetworkError, ServerError, NotFoundError } from './errors';
 const baseURL = process.env.REACT_APP_API;
 
 export async function getAssets() {
-  console.log(baseURL)
     try {
-        const response = await fetch(`/assets`, {
-          mode: 'no-cors'
-        });
+        const response = await fetch(`/assets`);
         if (!response.ok) {
             return handleError(response.status);
         }
