@@ -19,8 +19,6 @@ function AssetsPage() {
     setErrorState({ hasErrors: true, message: err.message });
   }
 
-  const goToEntitiesComponent = () => <button className="table-button"><Link to={`${publicURL}/entities`}>Go to Entities</Link></button>;
-
   return (
       <>
         <h2>Assets</h2>  
@@ -31,7 +29,7 @@ function AssetsPage() {
             <CustomTable 
               headers={getObjectKeys(assets.length && assets[0])}
               data={assets} 
-              addColumn={{header: "Go to", content: goToEntitiesComponent()}}/>
+              addColumn={true}/>
             :
             <RenderLoader text="Wait I'm loading assets for you"/>
           } 
