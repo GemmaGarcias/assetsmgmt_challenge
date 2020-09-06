@@ -1,7 +1,5 @@
 import { NetworkError, ServerError, NotFoundError } from './errors';
 
-const baseURL = process.env.REACT_APP_API;
-
 export async function getAssets() {
     try {
         const response = await fetch(`/assets`);
