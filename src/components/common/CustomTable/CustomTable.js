@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import NewRow from './NewRow';
 import './CustomTable.css';
+
+const publicURL = process.env.PUBLIC_URL;
 
 function CustomTable({headers, data, addColumn, contextmenu}) {
   const [dataTable, setDatatable] = useState([...data]);
@@ -38,7 +41,7 @@ function CustomTable({headers, data, addColumn, contextmenu}) {
                   {headers.map((property, index) => (
                     <td key={index}>{row[property]}</td>
                   ))}
-                  {addColumn && <td>{addColumn.content}</td>}
+                  {addColumn && <td><Link to={`${publicURL}/entities/${row.id}`}>Related entities</Link></td>}
                 </>
               </tr>
             ))}
