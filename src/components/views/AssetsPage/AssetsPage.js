@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getAssets } from "../../../services/services";
+import { getAssets } from '../../../services/services';
 import { getObjectKeys } from '../../../utils/utils';
 import RenderLoader from '../../common/RenderLoader/RenderLoader';
 import CustomTable from '../../common/CustomTable/CustomTable';

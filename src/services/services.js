@@ -1,8 +1,10 @@
 import { NetworkError, ServerError, NotFoundError } from './errors';
 
+const BASE_URL="https://cors-anywhere.herokuapp.com/https://6y458uslg3.execute-api.eu-west-3.amazonaws.com/elixos";
+
 export async function getAssets() {
     try {
-        const response = await fetch(`/assets`);
+        const response = await fetch(`${BASE_URL}/assets`);
         if (!response.ok) {
             return handleError(response.status);
         }
@@ -18,7 +20,7 @@ export async function getAssets() {
 
 export async function getEntities(lastParam) {
   try {
-      const response = await fetch(`/entities`);
+      const response = await fetch(`${BASE_URL}/entities`);
       if (!response.ok) {
           return handleError(response.status);
       }
