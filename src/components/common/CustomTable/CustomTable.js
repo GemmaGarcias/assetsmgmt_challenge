@@ -19,9 +19,7 @@ function CustomTable({headers, data, addColumn, disableContextMenu}) {
         <thead>
           <tr>
             <>
-              {headers.map((name, index) => (
-                <th key={index}>{name}</th>
-              ))}
+              {headers.map((name, index) => (<th key={index}>{name}</th>))}
               {addColumn && <th>{addColumn.header}</th>}
             </>
           </tr>
