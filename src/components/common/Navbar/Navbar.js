@@ -11,7 +11,7 @@ function Navbar() {
 
   function updateActiveMenu(path) {
     return menu.map((item, i) => {
-      if(`${publicURL}${item.path}` === path){ item.active = true; } else { item.active = false; }
+      if(path.includes(`${publicURL}${item.path}`)){ item.active = true; } else { item.active = false; }
       return item;})
   }
 

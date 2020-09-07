@@ -1,11 +1,8 @@
 import { NetworkError, ServerError, NotFoundError } from './errors';
 
-const baseURL = process.env.REACT_APP_API;
-
 export async function getAssets() {
-  console.log(baseURL)
     try {
-        const response = await fetch(`${baseURL}/assets`);
+        const response = await fetch(`/assets`);
         if (!response.ok) {
             return handleError(response.status);
         }
@@ -19,14 +16,18 @@ export async function getAssets() {
     }
 }
 
-export async function getEntities() {
+export async function getEntities(lastParam) {
   try {
-      const response = await fetch(`${baseURL}/entities`);
+      const response = await fetch(`/entities`);
       if (!response.ok) {
           return handleError(response.status);
       }
       const { entities } = await response.json();
-      return entities;
+      if(lastParam === 'entities') {
+        return entities;
+      } else { 
+        return entities.filter(item => item.id_asset === parseInt(lastParam)); }
+     
   } catch (err) {
       if (err instanceof ServerError || err instanceof NotFoundError) {
           throw err;
