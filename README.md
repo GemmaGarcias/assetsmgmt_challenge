@@ -21,5 +21,3 @@ npm install
 ```
 npm run start
 ```
-----------------
-You can preview page [here](https://gemmagarcias.github.io/assetsmgmt_challenge/)
