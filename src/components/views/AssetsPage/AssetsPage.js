@@ -4,8 +4,6 @@ import { getObjectKeys } from '../../../utils/utils';
 import RenderLoader from '../../common/RenderLoader/RenderLoader';
 import CustomTable from '../../common/CustomTable/CustomTable';
 
-const publicURL = process.env.PUBLIC_URL;
-
 function AssetsPage() {
   const [assets, setAssets] = useState();
   const [errorState, setErrorState] = useState({ hasErrors: false });
@@ -28,7 +26,8 @@ function AssetsPage() {
             <CustomTable 
               headers={getObjectKeys(assets.length && assets[0])}
               data={assets} 
-              addColumn={true}/>
+              addColumn={true}
+              disableContextMenu={true}/>
             :
             <RenderLoader text="Wait I'm loading assets for you"/>
           } 

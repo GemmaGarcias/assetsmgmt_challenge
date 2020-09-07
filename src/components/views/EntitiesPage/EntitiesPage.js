@@ -28,7 +28,7 @@ function EntitiesPage() {
             <CustomTable 
               headers={getObjectKeys(entities.length && entities[0])}
               data={entities}
-              contextmenu={true}/>
+              disableContextMenu={false}/>
             : 
             <RenderLoader text={"Wait I'm loading entities for you"}/>
         }    
