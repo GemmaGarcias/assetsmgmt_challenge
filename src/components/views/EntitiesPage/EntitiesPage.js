@@ -11,8 +11,8 @@ function EntitiesPage() {
   const [errorState, setErrorState] = useState({ hasErrors: false });
 
   useEffect(() => {
-    const id = getLastItem(location.pathname);
-    getEntities(id).then(setEntities).catch(handleError);
+    const lastParam = getLastItem(location.pathname);
+    getEntities(lastParam).then(setEntities).catch(handleError);
   }, [location.pathname]);
 
   function handleError(err) {
