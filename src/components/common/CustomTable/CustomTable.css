@@ -30,32 +30,34 @@ tr:nth-child(odd) td {
   background-color: rgb(245,245,245);
 }
 
-.trigger-area {
+.td-padding {
   padding: 12px 5px;
 }
 
 .table-button {
   cursor: pointer;
   border: none;
-  color: green;
+  color: rgba(76, 175, 80, 0.8);
   background-color: inherit;
 }
-
-.table-button:hover {
+.table-button.button-hover:hover {
   color: white;
-  background-color: green;
+  padding: 8px;
+  background-color: rgba(76, 175, 80, 0.8);
+  border-radius: 3px;
 }
 
 .table-button a{
-  padding: 5px;
+  padding: 8px;
   display: inline-block;
   text-decoration: none;
-  color: green;
+  color: rgba(76, 175, 80, 0.8);
 }
 
-.table-button a:hover{
-  text-decoration: none;
+.table-button a:hover {
   color: white;
+  background-color: rgba(76, 175, 80, 0.8);
+  border-radius: 3px;
 }
 
 .popup-menu {

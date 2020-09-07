@@ -27,7 +27,7 @@ function AssetsPage() {
               headers={getObjectKeys(assets.length && assets[0])}
               data={assets} 
               addColumn={true}
-              disableContextMenu={false}/>
+              disableContextMenu={true}/>
             :
             <RenderLoader text="Wait I'm loading assets for you"/>
           } 

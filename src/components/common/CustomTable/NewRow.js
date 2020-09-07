@@ -19,9 +19,9 @@ import React, { useState } from 'react';
     return (
       <tr>
         {headers.map((property, index) => (
-          <td key={index}><input name={property} onChange={handleOnChange} value={newRow[property] || ''}/></td>
+          <td key={index} className="td-padding"><input name={property} onChange={handleOnChange} value={newRow[property] || ''}/></td>
         ))}
-        <td><button className="table-button" onClick={onRowSubmit}>Submit</button></td>
+        <td><button className="table-button button-hover" onClick={onRowSubmit}>Submit</button></td>
       </tr>
     )
   }

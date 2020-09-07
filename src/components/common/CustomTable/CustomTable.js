@@ -38,7 +38,10 @@ function CustomTable({headers, data, addColumn, disableContextMenu}) {
                           disable={disableContextMenu}/>
                       </td>
                     ))}
-                    {addColumn && <td><Link to={`${publicURL}/entities/${row.id}`}>Related entities</Link></td>}   
+                    {addColumn && 
+                      <td>
+                        <button className="table-button td-padding"><Link to={`${publicURL}/entities/${row.id}`}>Related entities</Link></button>
+                      </td>}   
                   </>
                 </tr>
               ))}            
