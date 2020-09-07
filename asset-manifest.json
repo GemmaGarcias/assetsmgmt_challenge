@@ -1,0 +1,33 @@
+{
+  "files": {
+    "static/js/0.cb2f03eb.chunk.js": "/assetsmgmt_challenge/static/js/0.cb2f03eb.chunk.js",
+    "static/js/0.cb2f03eb.chunk.js.map": "/assetsmgmt_challenge/static/js/0.cb2f03eb.chunk.js.map",
+    "main.css": "/assetsmgmt_challenge/static/css/main.024c680b.chunk.css",
+    "main.js": "/assetsmgmt_challenge/static/js/main.e7cea558.chunk.js",
+    "main.js.map": "/assetsmgmt_challenge/static/js/main.e7cea558.chunk.js.map",
+    "runtime-main.js": "/assetsmgmt_challenge/static/js/runtime-main.de13bf4e.js",
+    "runtime-main.js.map": "/assetsmgmt_challenge/static/js/runtime-main.de13bf4e.js.map",
+    "static/js/3.c07f6185.chunk.js": "/assetsmgmt_challenge/static/js/3.c07f6185.chunk.js",
+    "static/js/3.c07f6185.chunk.js.map": "/assetsmgmt_challenge/static/js/3.c07f6185.chunk.js.map",
+    "static/css/4.63cabfd0.chunk.css": "/assetsmgmt_challenge/static/css/4.63cabfd0.chunk.css",
+    "static/js/4.1382836e.chunk.js": "/assetsmgmt_challenge/static/js/4.1382836e.chunk.js",
+    "static/js/4.1382836e.chunk.js.map": "/assetsmgmt_challenge/static/js/4.1382836e.chunk.js.map",
+    "static/css/5.63cabfd0.chunk.css": "/assetsmgmt_challenge/static/css/5.63cabfd0.chunk.css",
+    "static/js/5.697c026e.chunk.js": "/assetsmgmt_challenge/static/js/5.697c026e.chunk.js",
+    "static/js/5.697c026e.chunk.js.map": "/assetsmgmt_challenge/static/js/5.697c026e.chunk.js.map",
+    "index.html": "/assetsmgmt_challenge/index.html",
+    "precache-manifest.8ed47faa3f05050de2a0c947bf54aa62.js": "/assetsmgmt_challenge/precache-manifest.8ed47faa3f05050de2a0c947bf54aa62.js",
+    "service-worker.js": "/assetsmgmt_challenge/service-worker.js",
+    "static/css/4.63cabfd0.chunk.css.map": "/assetsmgmt_challenge/static/css/4.63cabfd0.chunk.css.map",
+    "static/css/5.63cabfd0.chunk.css.map": "/assetsmgmt_challenge/static/css/5.63cabfd0.chunk.css.map",
+    "static/css/main.024c680b.chunk.css.map": "/assetsmgmt_challenge/static/css/main.024c680b.chunk.css.map",
+    "static/js/0.cb2f03eb.chunk.js.LICENSE.txt": "/assetsmgmt_challenge/static/js/0.cb2f03eb.chunk.js.LICENSE.txt",
+    "static/js/3.c07f6185.chunk.js.LICENSE.txt": "/assetsmgmt_challenge/static/js/3.c07f6185.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de13bf4e.js",
+    "static/js/3.c07f6185.chunk.js",
+    "static/css/main.024c680b.chunk.css",
+    "static/js/main.e7cea558.chunk.js"
+  ]
+}
