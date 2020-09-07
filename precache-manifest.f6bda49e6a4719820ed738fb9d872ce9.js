@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "166a018e6fc70ba5c2eb23cbb0e43fb2",
+    "revision": "94bd3e6f008332dc4ea51d1aa50dc61f",
     "url": "/assetsmgmt_challenge/index.html"
   },
   {
-    "revision": "7c2f37609aad6c99ced8",
+    "revision": "665ed35b1fc018105dec",
     "url": "/assetsmgmt_challenge/static/css/4.63cabfd0.chunk.css"
   },
   {
-    "revision": "7bf1b6d1d4804ce95823",
+    "revision": "b7653affee66b5fd9b57",
     "url": "/assetsmgmt_challenge/static/css/5.63cabfd0.chunk.css"
   },
   {
@@ -32,19 +32,19 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/assetsmgmt_challenge/static/js/3.c07f6185.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7c2f37609aad6c99ced8",
-    "url": "/assetsmgmt_challenge/static/js/4.edb3404f.chunk.js"
+    "revision": "665ed35b1fc018105dec",
+    "url": "/assetsmgmt_challenge/static/js/4.caaf1631.chunk.js"
   },
   {
-    "revision": "7bf1b6d1d4804ce95823",
-    "url": "/assetsmgmt_challenge/static/js/5.fc471c31.chunk.js"
+    "revision": "b7653affee66b5fd9b57",
+    "url": "/assetsmgmt_challenge/static/js/5.cb16b627.chunk.js"
   },
   {
     "revision": "45895941df1a550afc0d",
     "url": "/assetsmgmt_challenge/static/js/main.e7cea558.chunk.js"
   },
   {
-    "revision": "b58916f70ce51e67e36a",
-    "url": "/assetsmgmt_challenge/static/js/runtime-main.667615a1.js"
+    "revision": "fd41292924e276023931",
+    "url": "/assetsmgmt_challenge/static/js/runtime-main.b82c3206.js"
   }
 ]);
